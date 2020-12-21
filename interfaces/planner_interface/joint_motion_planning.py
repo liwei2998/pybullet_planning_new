@@ -216,7 +216,6 @@ def plan_joint_motion(body, joints, end_conf, obstacles=[], attachments=[],
     start_conf = get_joint_positions(body, joints)
 
     if not check_initial_end(start_conf, end_conf, collision_fn, diagnosis=diagnosis):
-        print 1
         return None
     return birrt(start_conf, end_conf, distance_fn, sample_fn, extend_fn, collision_fn, **kwargs)
     #return plan_lazy_prm(start_conf, end_conf, sample_fn, extend_fn, collision_fn)
