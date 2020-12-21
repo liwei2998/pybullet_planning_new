@@ -148,8 +148,7 @@ def birrt(q1, q2, distance_fn, sample_fn, extend_fn, collision_fn,
     """
     start_time = time.time()
     if collision_fn(q1) or collision_fn(q2):
-        print 2
-        return None
+        return None, None
     path,dis = direct_path(q1, q2, extend_fn, collision_fn)
     if path is not None:
         return path,dis
@@ -172,5 +171,4 @@ def birrt(q1, q2, distance_fn, sample_fn, extend_fn, collision_fn,
                 dis.append(dis_tmp)
             return path, dis
             # return smooth_path(path, extend_fn, collision_fn, iterations=smooth)
-        print 3
-    return None
+    return None, None
